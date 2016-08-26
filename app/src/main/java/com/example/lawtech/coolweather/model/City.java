@@ -6,7 +6,6 @@ package com.example.lawtech.coolweather.model;
 public class City {
     private int id;
     private String cityName;
-    private String cityCode;
     private int provinceId;
 
     public int getId() {
@@ -15,10 +14,6 @@ public class City {
 
     public String getCityName() {
         return cityName;
-    }
-
-    public String getCityCode() {
-        return cityCode;
     }
 
     public int getProvinceId() {
@@ -31,10 +26,6 @@ public class City {
 
     public void setCityName(String cityName) {
         this.cityName = cityName;
-    }
-
-    public void setCityCode(String cityCode) {
-        this.cityCode = cityCode;
     }
 
     public void setProvinceId(int provinceId) {

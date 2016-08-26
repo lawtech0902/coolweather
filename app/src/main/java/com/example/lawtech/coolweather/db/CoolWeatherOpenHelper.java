@@ -12,20 +12,18 @@ public class CoolWeatherOpenHelper extends SQLiteOpenHelper {
     /*Province表建表语句*/
     public static final String CREATE_PROVINCE = "create table Province ("
             + "id integer primary key autoincrement, "
-            + "province_name text, "
-            + "province_code text)";
+            + "province_name text)";
 
     /*City表建表语句*/
     public static final String CREATE_CITY = "create table City ("
             + "id integer primary key autoincrement, "
             + "city_name text, "
-            + "city_code text, "
             + "province_id integer)";
-    /*County表建表语句*/
-    public static final String CREATE_COUNTY = "create table County ("
+
+    /*District表建表语句*/
+    public static final String CREATE_DISTRICT = "create table District ("
             + "id integer primary key autoincrement, "
-            + "county_name text, "
-            + "county_code text, "
+            + "district_name text, "
             + "city_id integer)";
 
     public CoolWeatherOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -37,11 +35,11 @@ public class CoolWeatherOpenHelper extends SQLiteOpenHelper {
         //执行建表语句
         sqLiteDatabase.execSQL(CREATE_PROVINCE);
         sqLiteDatabase.execSQL(CREATE_CITY);
-        sqLiteDatabase.execSQL(CREATE_COUNTY);
+        sqLiteDatabase.execSQL(CREATE_DISTRICT);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
 
     }
 }
